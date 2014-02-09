@@ -1,12 +1,3 @@
-#
-# Cookbook Name:: rails4
-# Recipe:: default
-#
-# Copyright (C) 2014 YOUR_NAME
-# 
-# All rights reserved - Do Not Redistribute
-#
-
 remote_file '/etc/apt/sources.list.d/couchbase.list' do
   source 'http://packages.couchbase.com/ubuntu/couchbase-ubuntu1204.list'
 end
