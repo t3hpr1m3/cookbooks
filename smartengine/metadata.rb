@@ -3,7 +3,7 @@ maintainer       'YOUR_NAME'
 maintainer_email 'YOUR_EMAIL'
 license          'All rights reserved'
 description      'Installs/Configures rails4 with couch'
-version          '0.1.1'
+version          '0.1.2'
 
 depends 'git'
 depends 'apt'
