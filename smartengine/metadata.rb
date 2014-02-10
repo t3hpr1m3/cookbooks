@@ -1,9 +1,9 @@
 name             'smartengine'
-maintainer       'YOUR_NAME'
-maintainer_email 'YOUR_EMAIL'
+maintainer       'Josh Williams'
+maintainer_email 'joshw@firma8.com'
 license          'All rights reserved'
 description      'Installs/Configures rails4 with couch'
-version          '0.1.2'
+version          '0.1.3'
 
 depends 'git'
 depends 'apt'

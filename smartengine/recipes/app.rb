@@ -1,13 +1,8 @@
 remote_file '/etc/apt/sources.list.d/couchbase.list' do
   source 'http://packages.couchbase.com/ubuntu/couchbase-ubuntu1204.list'
+  notifies :run, 'execute[apt-get update]', :immediately
 end
 
-include_recipe 'apt'
-
-apt_package 'tmux'
-
-include_recipe 'git'
-include_recipe 'vim'
 include_recipe 'rbenv::default'
 include_recipe 'rbenv::ruby_build'
 
