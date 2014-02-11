@@ -1,0 +1,16 @@
+upstream es_backend {
+  server elastic1.smartengine.local:9200;
+  server elastic2.smartengine.local:9200;
+}
+
+server {
+  listen 9200;
+
+  location / {
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_pass $scheme://es_backend;
+  }
+
+}

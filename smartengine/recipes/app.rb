@@ -5,6 +5,16 @@ end
 
 include_recipe 'rbenv::default'
 include_recipe 'rbenv::ruby_build'
+include_recipe 'java'
+include_recipe 'mysql::server'
+include_recipe 'mysql::client'
+
+[
+  'libpq-dev',
+  'libsqlite3-dev'
+].each do |p|
+  package p
+end
 
 rbenv_ruby '1.9.3-p194' do
   global true

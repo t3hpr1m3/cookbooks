@@ -1,1 +1,5 @@
-
+default['mysql']['server_root_password'] = 'foobar'
+default['mysql']['server_repl_password'] = 'foobar'
+default['mysql']['server_debian_password'] = 'foobar'
+default['java']['install_flavor'] = 'openjdk'
+default['java']['jdk_version'] = '7'

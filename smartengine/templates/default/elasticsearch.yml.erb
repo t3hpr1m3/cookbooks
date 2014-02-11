@@ -1,0 +1,31 @@
+cluster.name: engine_development
+
+path.conf: <%= node.elasticsearch[:path][:conf] %>
+#path.data: /mnt/apps/engine_db/
+#path.logs: /mnt/apps/engine_db/
+
+index.number_of_shards: 2
+index.number_of_replicas: 1
+index.query.bool.max_clause_count: 1000000
+
+network.publish_host: "<%= node.elasticsearch[:network][:publish_host] %>"
+
+index.analysis.analyzer.no_stop_standard:
+  type: custom
+  tokenizer: standard
+  stopwords: _none_
+index.analysis.analyzer.no_stop_ngram:
+  type: custom
+  tokenizer: whitespace
+  stopwords: _none_
+  filter: [no_stop_ngram]
+index.analysis.filter.no_stop_ngram:
+  type: shingle
+  max_shingle_size: 100
+#Japanese
+index.analysis.analyzer.ja_analyzer:
+  type: custom
+  tokenizer: kuromoji_tokenizer
+
+couchbase.username: admin
+couchbase.password: foobar
