@@ -4,3 +4,4 @@ include_recipe 'git'
 include_recipe 'openssh'
 
 apt_package 'tmux'
+apt_package 'xclip'
