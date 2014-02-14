@@ -3,7 +3,7 @@ maintainer       'Josh Williams'
 maintainer_email 'joshw@firma8.com'
 license          'All rights reserved'
 description      'Installs/Configures rails4 with couchbase and elasticsearch'
-version          '0.2.1'
+version          '0.2.2'
 
 depends 'git'
 depends 'apt'
