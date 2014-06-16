@@ -1,6 +1,7 @@
 upstream cb_backend {
-  server couch1.smartengine.local:8091;
-  server couch2.smartengine.local:8091;
+  <%- node.couchbase[:couch_nodes].each do |s| -%>
+  server <%= s %>:8091;
+  <%- end -%>
 }
 
 server {

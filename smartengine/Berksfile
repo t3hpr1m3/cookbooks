@@ -1,11 +1,12 @@
-site :opscode
+source 'http://api.berkshelf.com'
 
 metadata
 
 cookbook 'build-essential'
 cookbook 'git'
 cookbook 'apt'
-cookbook 'rbenv'
+cookbook 'rbenv', git: 'git://github.com/fnichol/chef-rbenv.git'
+cookbook 'ruby_build'
 cookbook 'vim'
 cookbook 'couchbase'
 cookbook 'java'

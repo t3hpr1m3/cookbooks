@@ -1,6 +1,7 @@
 upstream es_backend {
-  server elastic1.smartengine.local:9200;
-  server elastic2.smartengine.local:9200;
+  <%- node.elasticsearch[:elastic_nodes].each do |s| -%>
+  server <%= s %>:9200;
+  <%- end -%>
 }
 
 server {
@@ -14,3 +15,4 @@ server {
   }
 
 }
+
