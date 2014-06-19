@@ -11,6 +11,11 @@ execute "#{node.elasticsearch[:dir]}/elasticsearch/bin/plugin -install elasticse
   not_if "test -d #{node.elasticsearch[:dir]}/elasticsearch/plugins/analysis-kuromoji"
 end
 
+execute "#{node.elasticsearch[:dir]}/elasticsearch/bin/plugin -install elasticsearch/elasticsearch-analysis-icu/2.1.0" do
+  user 'root'
+  not_if "test -d #{node.elasticsearch[:dir]}/elasticsearch/plugins/analysis-icu"
+end
+
 template "#{node.elasticsearch[:path][:conf]}/elasticsearch.yml" do
   source "elasticsearch.yml.erb"
   owner 'root'
